@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func main() {
+	var num int = 4
+
+	switch {
+	case num < 5:
+		fmt.Println("The number is less than 5")
+		fallthrough
+	case num == 4:
+		fmt.Println("The number is 4")
+	default:
+		fmt.Println("This is some number")
+	}
+	checkType(2)
+	checkType(3.13)
+	checkType("string")
+}
+
+func checkType(x interface{}) {
+	switch x.(type) {
+	case int:
+		fmt.Println("This is an integer")
+		// fallthrough
+	case float64:
+		fmt.Println("This is a floating point value")
+	default:
+		fmt.Println("The value is neither a float nor an integer")
+	}
+}

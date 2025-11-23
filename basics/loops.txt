@@ -1,0 +1,71 @@
+package basics
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var start int = 0
+	var end int = math.MaxInt16
+	for ; start <= end; start++ {
+		fmt.Println(start)
+	}
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	numbers := []int32{1, 2, 3, 4, 5}
+	for idx, value := range numbers {
+		if value%2 == 0 {
+			continue
+		}
+		if value == 5 {
+			break
+		}
+		fmt.Printf("Index : %d, Value : %d\n", idx, value)
+		// continue
+		// fmt.Printf("\n")
+	}
+	rows := 5
+	cols := 5
+	for i := 1; i <= rows; i++ {
+		for j := 1; j <= cols; j++ {
+			fmt.Printf("[%d][%d] ", i, j)
+		}
+		fmt.Println()
+	}
+
+	for i := range 10 {
+		fmt.Println(i)
+	}
+
+	fmt.Println("While Loops")
+
+	start = 0
+	end = 5
+
+	//for as while
+	// unsee what while loops can do, the same for loops can do iterate over based on conditions
+	for start <= end {
+		fmt.Printf("%d ", start)
+		start++
+	}
+	fmt.Println()
+
+	for { // while (True) //executes indefinitely
+		fmt.Println("Hello")
+		break
+	}
+
+	var sum = 0
+	var n = 10
+	// sum of 'n' numbers
+	for n >= 0 {
+		sum += n
+		n--
+	}
+	fmt.Println("The sum of 10 numbers is :", sum)
+
+}
