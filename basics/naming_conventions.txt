@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+type UserInfo struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+func main() {
+	// PascalCase
+	// Examples : CalculateArea, UserInfo, NewHttpRequest
+	// Types : Structs, Interfaces, Enums
+
+	// snake_case
+	// Examples: user_id, first_name, http_request
+	// Types: Variables, File Names
+
+	// UPPERCASE
+	// Examples: ID
+	// Types: Constants - > immutables
+
+	// mixedCase (camelCase)
+	// Examples: javaScript, htmlDocument, isValid
+	// Types: Boolean, Special Document Names
+	// Be consistent in naming identifiers.
+
+	// lowercase (pkg names)
+
+	const EPISLON string = "ε"
+
+	var employeeID = 32
+	fmt.Println("Employee Id", employeeID)
+}

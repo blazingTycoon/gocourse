@@ -1,0 +1,21 @@
+package basics
+
+import "fmt"
+
+var middleName = "Cane"
+
+func main() {
+	// var age int
+	// var name string = "John"
+	// var name1 = "Jane"
+
+	// count := 10
+	// lastName := "Smith"
+	fmt.Println("MiddleName", middleName)
+	middleName := "Mayor"
+	fmt.Println("MiddleName", middleName)
+	// {
+	// 	var middleName string = "Michael"
+	// }
+	// fmt.Println(middleName)
+}
