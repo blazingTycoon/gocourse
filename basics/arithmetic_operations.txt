@@ -1,0 +1,34 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var a, b int = 10, 3
+	var result int
+	result = a + b
+	fmt.Println("Addition : ", result)
+	result = a - b
+	fmt.Println("Subtraction : ", result)
+	result = a * b
+	fmt.Println("Multiplication : ", result)
+	result = a / b
+	fmt.Println("Quotient : ", result)
+	result = a % b
+	fmt.Println("Remainder : ", result)
+
+	result = 10%3 - 5*2 + 10 - (5%2)*3
+	fmt.Println("Result : ", result)
+
+	var max_int uint64 = 18446744073709551615
+	fmt.Println(max_int)
+	max_int = max_int + 1 //overflows
+	fmt.Println(max_int)
+
+	var smallfloat float64 = 1.0e-323
+	fmt.Println(smallfloat)
+	smallfloat = smallfloat / math.MaxFloat64
+	fmt.Println(smallfloat)
+}
