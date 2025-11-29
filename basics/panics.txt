@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main() {
+	// panic(interface) interface means any type as an argument to the function
+	// process(3)
+	process(-10) // program exits here, termination as opposite to handling the error by error types
+	defer fmt.Println("This is unreachable")
+	process(4)
+}
+
+func process(input int) {
+	if input < 0 {
+		defer fmt.Println("This prints from inside the process function as it is pushed to activation stack before panicking")
+		panic("Input must be a non negative number")
+	} else {
+		fmt.Println("Processing Input")
+	}
+	defer fmt.Println("This statement do not prints")
+}

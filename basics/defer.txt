@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func main() {
+	process(3)
+}
+
+func process(i int) {
+	fmt.Println("This is first normal execution")
+	// a, b := 3, 4
+	// defer c := a + b
+	// defer -> INORDER EXECUTE OUT OF ORDER COMMIT
+	defer fmt.Println("deffered i value:", i)
+	i++
+	defer fmt.Println("First")
+	defer fmt.Println("This is a deferred statement that was executed")
+	defer fmt.Println("This last deferred shall be first executed. LIFO")
+	defer fmt.Println("Defer funcs are LIFO principle may be related to stacks")
+	fmt.Println("This is normal execution")
+	fmt.Println(i)
+
+	for val := range 5 {
+		fmt.Println(val)
+		defer fmt.Println(val)
+	}
+
+}
