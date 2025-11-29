@@ -1,0 +1,48 @@
+package main
+
+import "fmt"
+
+func main() {
+	// func fn_name(parameters list) returnTypes list{
+	// }
+	// fn_name -> capital means public fn means function is accessible publicly outside the package
+	// fn_name -> small means private meaning that function is accessible within that package
+	sum := add(3, 4)
+	fmt.Println(sum)
+	fmt.Println(add(3, 4))
+
+	greet := func() {
+		fmt.Println("Hello Anonymous Functions")
+	}
+
+	greet()
+
+	operation := add
+
+	result := operation(4, 5)
+	fmt.Println(result)
+	// passing fn as an argument
+	result = applyOperation(3, 4, add)
+	fmt.Println(result)
+
+	//returning and using a function
+	multiplyByTwo := createMultiplier(2)
+	fmt.Println(multiplyByTwo(6))
+
+}
+
+func add(a, b int) int {
+	return a + b
+}
+
+// Function that takes a function as an argument
+func applyOperation(x int, y int, operation func(int, int) int) int {
+	return operation(x, y)
+}
+
+// Function that returns a function
+func createMultiplier(factor int) func(int) int {
+	return func(x int) int {
+		return x * factor
+	}
+}

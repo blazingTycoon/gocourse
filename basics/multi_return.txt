@@ -1,0 +1,34 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+func main() {
+	// func fn_name (param paramType1, param paramType2,..) (returnType1, returnType2,..)	 {}
+	quotient, remainder := divide(10, 3)
+	fmt.Println(quotient, remainder)
+
+	greater, err := compare(3, 3)
+	if greater == "" {
+		fmt.Println(err)
+	} else {
+		fmt.Println(greater)
+	}
+}
+
+func divide(x int, y int) (quotient int, remainder int) {
+	quotient = x / y
+	remainder = x % y
+	return
+}
+
+func compare(x int, y int) (string, error) {
+	if x > y {
+		return "x is greater than y", nil
+	} else if y > x {
+		return "y is greater than x", nil
+	}
+	return "", errors.New("Unable to compare which is greater")
+}

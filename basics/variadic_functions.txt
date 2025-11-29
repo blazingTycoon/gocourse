@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+func main() {
+	// ... Ellipsis- > to declare the variadic parameters (must be the last parameter in the function signature)
+	// func fn_name(param1 paramType1, param2 paramType2, param3 ...paramType3) returnType{}
+	// param1 -> one param
+	// param2 -> one param
+	// param3 -> zero or infinite params
+	// add := sum(1, 2, 3, 4, 5, 6)
+	// fmt.Println(add)
+	a, b := sum("Sum of 1, 2, 3 =", 1, 2, 3)
+	fmt.Println(a, b)
+
+	numbers := []int{1, 2, 3, 4, 5}
+	a, b = sum("Sum of sequence", numbers...)
+	fmt.Println(a, b)
+}
+
+func sum(returnString string, nums ...int) (string, int) {
+	total := 0
+	for _, v := range nums {
+		total += v
+	}
+	return returnString, total
+}
