@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+	"maps"
+)
+
+func main() {
+	// var dictVar map[keyType]valueType
+	// dictVar := make(map[keyType]valueType)
+	// dictVar := map[keyType]valueType{
+	// 	k:v
+	// }
+
+	var myDict = make(map[string]int)
+	fmt.Println(myDict)
+	myDict["key1"] = 100
+	myDict["age"] = 22
+	fmt.Println(myDict)
+	fmt.Println(myDict["age"])
+	fmt.Println(myDict["non_existent"])
+
+	delete(myDict, "key1")
+	fmt.Println(myDict)
+
+	clear(myDict)
+	fmt.Println(myDict)
+	myDict["age"] = 22
+	val1, val2 := myDict["age"] // returns true or false based on the presence of the key
+	fmt.Println(val1, val2)
+
+	myDict2 := map[string]int{
+		"a": 97,
+		"b": 98,
+	}
+	fmt.Println(myDict2)
+
+	if maps.Equal(myDict, myDict2) {
+		fmt.Println("The maps are equal")
+	} else {
+		fmt.Println("The maps are not equal")
+	}
+
+	for key, value := range myDict2 {
+		fmt.Printf("myDict[%s]: %d\n", key, value)
+	}
+
+	var myDict3 map[string]string
+	if myDict3 == nil {
+		fmt.Println("map is initalized to nil value")
+	}
+
+	val := myDict3["age2"]
+	fmt.Println(val)
+
+	// myDict3["name"] = "vignesh" - > returns error has memory has not been allocated yet
+
+	myDict3 = make(map[string]string)
+	myDict3["name"] = "vignesh"
+
+	var myDict5 = make(map[string]map[string]string)
+	myDict5["hello"] = myDict3
+	fmt.Println(myDict5)
+}

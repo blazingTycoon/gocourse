@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func main() {
+	message := "Hello World from GoLang"
+	for i, v := range message {
+		fmt.Println(i, v) // prints the unicode value of the characters
+		fmt.Printf("Index :%d, Rune: %c\n", i, v)
+	}
+
+}
