@@ -1,0 +1,15 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	fmt.Println("Starting the main function")
+	defer fmt.Println("This defer statement shall not be executed")
+	// Exit with status code 1
+	os.Exit(1)
+
+	fmt.Println("This shall not be executed")
+}

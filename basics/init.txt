@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+// this code demonstrates the use and flow of execution of the init functions in golang
+func init() {
+	fmt.Println("Initializing pkg")
+}
+
+func init() {
+	fmt.Println("This is a second init")
+}
+
+func init() {
+	fmt.Println("this is third init")
+}
+
+func main() {
+	fmt.Println("Inside main fn")
+}
