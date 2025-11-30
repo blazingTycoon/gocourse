@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+func main() {
+	message := "This is a string"
+	for idx, value := range message {
+		fmt.Printf("Message[%d]:%v\n", idx, value)
+		fmt.Printf("Message[%d]:%#v\n", idx, value)
+		fmt.Printf("Message[%d]:%T\n", idx, value)
+		fmt.Printf("Message[%d]:%d\n", idx, value)
+		fmt.Printf("Message[%d]:%O\n", idx, value)
+		fmt.Printf("Message[%d]:%4d\n", idx, value)
+		fmt.Printf("Message[%d]:%-4d\n", idx, value)
+		fmt.Printf("Message[%d]:%04d\n", idx, value)
+		break
+	}
+
+	floatNum := 3423242342343.147
+	fmt.Printf("%e\n", floatNum)    // Exponential or scientific notation
+	fmt.Printf("%.2f\n", floatNum)  // floating point notation
+	fmt.Printf("%.1f\n", floatNum)  // round off to one decimal place
+	fmt.Printf("%6.1f\n", floatNum) // width 6 before the num and round off to 1 decimal point
+	fmt.Printf("%g\n", floatNum)    // exponent as needed - > gives the number as is in exponent as comapred to cutting of to 6 decimal places in exponent format
+	// fmt.Printf("%\n", floatNum)    // exponent as needed
+
+	boolNum := true
+
+	fmt.Printf("%t\n", boolNum) // boolean formatting
+
+}

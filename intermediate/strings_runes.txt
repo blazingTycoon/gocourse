@@ -1,0 +1,60 @@
+package main
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+func main() {
+	message := "Hello\ngolang"
+	newMessage := "Hellogolang"
+	rawMessage := `Hello\ngolang` // this is a raw string since we used back ticks so escape sequences shall not work
+	fmt.Println(message)
+	fmt.Println(rawMessage)
+	fmt.Println("Hello\tgo")
+	carriageMessage := "Hello\rgolang"
+	fmt.Println("Hello\rgolang")
+
+	fmt.Println("The length of the string is :", len(newMessage)) // doesnt account for \0 as in C
+	fmt.Println("The length of the string with escape sequence is :", len(message))
+	fmt.Println("The length of the string with raw quotes is :", len(rawMessage))
+	fmt.Println("The length of the string with carriage return is :", len(carriageMessage))
+
+	for idx, val := range newMessage {
+		fmt.Println(idx, val) // prints runes that are integer value that represents the character
+		fmt.Printf("HexMessage[%d]:%x\n", idx, val)
+		fmt.Printf("CharMessage[%d]:%c\n", idx, val)
+		fmt.Printf("RuneMessage[%d]:%v\n", idx, val)
+	}
+
+	firstName := "Spider"
+	lastName := "Man"
+	fmt.Println(firstName + lastName) // string concatenation
+
+	stringOne := "ap"
+	stringTwo := "App"
+
+	if stringOne < stringTwo { // strings are compared lexicographically
+		fmt.Println(stringOne) //if app then this runs
+	} else {
+		fmt.Println(stringTwo) // if App then this runs
+	}
+
+	// print the number of runes in string
+	fmt.Println(utf8.RuneCountInString(message))
+	fmt.Println(utf8.RuneCountInString(newMessage))
+	fmt.Println(utf8.RuneCountInString(rawMessage))
+
+	var ch rune = 'a'
+	// var ch1 rune = `a` or "a" is not allowed in a rune type
+	fmt.Println(ch)
+	var tamilch rune = 'வ' // unicode value for tamil char
+	fmt.Println(tamilch)
+	fmt.Printf("%c\n", tamilch)
+	var hinch rune = 'न' // unicode value for hindi char
+	fmt.Println(hinch)
+	fmt.Printf("%c\n", hinch)
+
+	cstr := string(ch)
+	fmt.Printf("Type of ch: %T\n", cstr)
+}

@@ -1,0 +1,40 @@
+package main
+
+func main() {
+
+	// Printing functions
+
+	// fmt.Print("Hello")
+	// fmt.Print(3.12)
+	// fmt.Print(4)
+
+	// fmt.Println("Hello")
+	// fmt.Println(3.12)
+	// fmt.Println(4)
+
+	// fmt.Printf("%s\n", "hello")
+
+	// // Formatting Functions
+	// s := fmt.Sprint("Hello", "World", 12)
+	// fmt.Println(s)
+	// s = fmt.Sprintln("Hello", "World", 12)
+	// fmt.Print(s)
+
+	// Scanning Functions
+
+	// var name string
+	// var age int
+
+	// fmt.Print("Enter your name and age")
+	// fmt.Scan(&name, &age) // ignores any number of newlines and spaces and accepts only the required types
+	// fmt.Println(name, age)
+	// fmt.Print("Enter your name and age")
+	// fmt.Scanln(&name, &age)
+	// fmt.Println(name, age)
+	// fmt.Print("Enter your name and age")
+	// fmt.Scanf("%s\t%d", &name, &age) // accepts the input in exact same format as the string
+	// fmt.Println(name, age)
+
+	// Error formatting functions
+	// fmt.Errorf
+}
