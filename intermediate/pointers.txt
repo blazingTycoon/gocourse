@@ -1,0 +1,53 @@
+package main
+
+import "fmt"
+
+func main() {
+	// pointer to an integer variable
+	var ptr *int
+	fmt.Println("Nil pointer:", ptr) // nil pointer
+	var a int = 15
+	ptr = &a
+	fmt.Println("The value of a is :", a)
+	fmt.Println("The address of a is: ", &a)
+	fmt.Println("The address of a is :", ptr)
+	fmt.Println("The address of ptr is :", &ptr)
+	fmt.Println("The value at address is :", *ptr)
+
+	fmt.Println("Value before pass by reference", a)
+	modifyValuePassByReference(&a)
+	fmt.Println("Value after pass by reference", a)
+
+	fmt.Println("Value before pass by value", a)
+	modifyValuePassByValue(a)
+	fmt.Println("Value after pass by value", a)
+
+	//pointer to a pointer
+	var ptrnew **int
+	var ptrnew2 *int
+	ptrnew2 = &a
+	ptrnew = &ptrnew2
+	fmt.Println(**ptrnew)
+}
+
+// pass by reference
+func modifyValuePassByReference(ptr *int) {
+	var b = *ptr
+	fmt.Println(b)
+	*ptr = *ptr + 1
+	fmt.Println(b)
+	b = *ptr
+	fmt.Println(b)
+	// return b
+}
+
+// pass by value
+func modifyValuePassByValue(nptr int) {
+	var b = nptr
+	fmt.Println(b)
+	nptr += 1
+	fmt.Println(b)
+	b = nptr
+	fmt.Println(b)
+	// return b
+}

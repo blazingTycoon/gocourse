@@ -1,0 +1,46 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	add := adder() // this variable gets the function returned by the adder() with the variables inside it
+	// add()
+	fmt.Println(add()) // so the variable state is maintained so even though the var is not scoped within the return function its state is still maintained in the closure
+	fmt.Println(add())
+	fmt.Println(add())
+	fmt.Println(add())
+
+	add2 := adder()
+	fmt.Println(add2())
+	fmt.Println(add())
+
+	//closure
+	adderMain := func() func(int) int {
+		j := 5
+		return func(x int) int {
+			j += x
+			return j
+		}
+	}
+
+	adderNew := adderMain()
+	fmt.Println(adderNew(4))
+	fmt.Println(adderNew(5))
+
+	adderNew2 := adderMain()
+	fmt.Println(adderNew2(3))
+
+}
+
+// closure
+func adder() func() int {
+	i := 0
+	fmt.Println("Previous value of i:", i)
+
+	return func() int {
+		i++
+		fmt.Println("Adding 1 to i")
+		return i
+	}
+}
